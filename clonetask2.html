@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    META TAGS - Tell the browser how to display this page
+
+    Charset: UTF-8 ensures all characters (including emojis and special symbols) display correctly
+    Viewport: Makes the page responsive - it scales properly on phones, tablets, and desktops
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>watch.it – Clone Task 2</title>
+
+  <!--
+    GOOGLE FONTS - Import custom fonts for the design
+
+    We're importing two fonts:
+    1. Lato (weights 300, 400, 700) - Clean, readable font for body text and descriptions
+    2. Teko (weights 400, 500, 700) - Bold, geometric font for titles and buttons
+
+    The preconnect links speed up font loading by establishing early connections to Google's servers.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Teko:wght@400;500;700&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  
+  <header class="site-header">
+    <div class="header-inner">
+      <!--
+        BRAND LOGO
+        The watch.it logo. Uses the bold Teko font to stand out.
+        Size: 2em on mobile, 3em on tablet/desktop
+      -->
+      <div class="brand">watch.it</div>
+
+      <!--
+        NAVIGATION MENU
+        Links to different movie categories: Action, Comedy, Romance, Drama
+        Hidden on mobile (display: none in CSS) to save space
+        Shown on tablet and desktop (display: flex in CSS)
+      -->
+      <nav class="nav">
+        <a href="#">Action</a>
+        <a href="#">Comedy</a>
+        <a href="#">Romance</a>
+        <a href="#">Drama</a>
+      </nav>
+
+      <!--
+        SEARCH FORM
+        Allows users to search for movies. The input field is hidden on mobile,
+        but the search button is always visible. On larger screens, we could
+        show the input field for typing search queries.
+    -->
+
+      <form class="search" role="search" aria-label="Search movies">
+        <input type="search" placeholder="Search" />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </header>
+
+
+    
+    
+  <main class="container">
+    <!--
+      
+      FEATURED MOVIE - Hero Section
+      
+
+      This is the main featured movie at the top of the page: "Who Framed Roger Rabbit"
+      It's larger and more prominent than other movies. The layout changes based on screen size:
+
+      - Mobile: Poster on top, title below, description below that, button at bottom
+      - Tablet: 2-column layout (poster left, content right)
+      - Desktop: Poster on top, description left, button right
+
+      This section uses the .movie-hero class which has special styling to make it stand out.
+    -->
+    <section class="movie movie-hero">
+      <!-- Large poster image for the featured movie -->
+      <img src="who-framed-roger-rabbit.jpg" alt="Featured movie poster" class="poster" />
+
+      <!-- Content area: title, description, and watch button -->
+      <div class="content">
+        <h2 class="title">Who Framed Roger Rabbit (1988)</h2>
+        <p class="desc">In a world where cartoons and humans coexist, a detective must solve a zany, high-stakes mystery. Packed with wild humor, groundbreaking animation, and noir twists, this unique film will pull you into a world where anything is possible!</p>
+        <button class="btn btn-primary">Watch Now</button>
+      </div>
+    </section>
+
+    <!--
+      
+      GRID SECTION - Two Movie Cards
+      
+
+      This section contains two movie cards: Hook and La La Land
+      The layout changes based on screen size:
+
+      - Mobile: Stacked vertically (one on top of the other)
+      - Tablet: Uses a clever CSS trick (display: contents) to flow into the parent's 2-column grid
+      - Desktop: 2-column grid side-by-side
+
+      Each card has a poster image, title, description, and watch button.
+    -->
+    <section class="grid-two">
+      
+      <article class="movie card">
+        <img src="hook.jpg" alt="Movie poster" class="poster" />
+        <div class="content">
+          <h3 class="title">Hook (1991)</h3>
+          <p class="desc">Rediscover Neverland in this thrilling twist on Peter Pan! Robin Williams stars as a grown-up Peter, who must rediscover his inner child to rescue his kids from the clutches of Captain Hook. Adventure, magic, and nostalgia blend in this timeless family classic.</p>
+          <button class="btn btn-primary">Watch Now</button>
+        </div>
+      </article>
+
+      
+      <article class="movie card">
+        <img src="la-la-land.jpg" alt="Movie poster" class="poster" />
+        <div class="content">
+          <h3 class="title">La La Land (2016)</h3>
+          <p class="desc">Love, dreams, and the magic of LA take center stage in this musical masterpiece. Watch as two starry-eyed artists navigate passion and ambition in a world where every moment feels like a cinematic spectacle!</p>
+          <button class="btn btn-primary">Watch Now</button>
+        </div>
+      </article>
+    </section>
+
+    
+    <section class="movie row">
+      <img src="hidden-figures.jpg" alt="Movie poster" class="poster" />
+      <div class="content">
+        <h3 class="title">Hidden Figures (2016)</h3>
+        <p class="desc">Three unsung heroes of NASA's space race take the spotlight in this inspiring true story. Battling discrimination and defying the odds, these brilliant African-American women prove that intelligence, perseverance, and unity can change history and break barriers.</p>
+        <button class="btn btn-primary">Watch Now</button>
+      </div>
+    </section>
+
+    
+    <section class="movie row">
+      <img src="palm-springs.jpg" alt="Movie poster" class="poster" />
+      <div class="content">
+        <h3 class="title">Palm Springs (2020)</h3>
+        <p class="desc">A never-ending wedding day turns into an unforgettable time-loop romance! Stuck in the same day, two strangers find love, chaos, and meaning in the most unexpected ways.</p>
+        <button class="btn btn-primary">Watch Now</button>
+      </div>
+    </section>
+
+    
+    <section class="movie row">
+      <img src="barbie.jpg" alt="Movie poster" class="poster" />
+      <div class="content">
+        <h3 class="title">Barbie (2023)</h3>
+        <p class="desc">Step into the dazzling world of Barbie as she embarks on an unexpected journey from her perfect doll life to the real world. Filled with humor, heart, and empowering messages, this vibrant adventure redefines what it means to dream big!</p>
+        <button class="btn btn-primary">Watch Now</button>
+      </div>
+    </section>
+  </main>
+
+ 
+</body>
+</html>
+
